@@ -12,26 +12,29 @@
 
 </head>
 
-<body class="bg-teal-900">
-
+<body class="bg-neutral-900"  >
     {% include 'navbar.html' %}
-    <div class="flex justify-center " style="height: 93vh;">
+    <div id="particles-js" style="height: 93vh">
 
-      <div class="flex justify-end items-center" style="width: 50vw; height: 80vh;">
-        <div class="font-semibold text-6xl flex items-end text-white" style="height: 20vh; width: 30vw;">
-          <p>Bienvenue, <br>je suis <span class="text-emerald-500">Adil</span><br>developpeur web
-          </p>
+      <div class="flex justify-center absolute " style="height: 93vh;left: 24%;">
+
+        <div class="flex justify-end items-center" style="width: 50vw; height: 80vh;">
+          <div class="font-semibold text-6xl flex items-end text-white" style="height: 20vh; width: 30vw;">
+            <p>Bienvenue, <br>je suis <span class="text-emerald-500">Adil</span><br>developpeur web
+            </p>
+          </div>
+          <img class="object-cover  rounded-full " src="../static/media/pp.jpg" alt="" style="height: 45vh; width: 25vw;">
+
         </div>
-        <img class="object-cover  rounded-full " src="../static/media/pp.jpg" alt="" style="height: 45vh; width: 25vw;">
+
+
 
       </div>
+  </div>
 
 
-
-    </div>
-
-
-
+  <script src="{{ url_for('static', filename='JS/particles.js') }}"></script>
+  <script src="{{ url_for('static', filename='JS/app.js') }}"></script>
 
 
 
@@ -39,5 +42,6 @@
 
 
 </body>
+
 
 </html>

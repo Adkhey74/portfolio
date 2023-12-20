@@ -20,7 +20,7 @@ def cv():
 
 @app.route('/download_pdf')
 def download_pdf():
-    pdf_path = 'Static/media/CV.pdf'  # Remplacez cela par le chemin réel de votre fichier PDF
+    pdf_path = 'static/media/CV.pdf'  # Remplacez cela par le chemin réel de votre fichier PDF
     return send_file(pdf_path, as_attachment=True)
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,77 +2,221 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet</title>
-  <link rel="icon" href="../static/house-solid.svg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet</title>
+    <link rel="icon" href="../static/house-solid.svg" type="image/x-icon">
 
-  {% include 'link.html' %}
+    {% include 'link.html' %}
 
 
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Roboto&family=Roboto+Condensed:wght@300&display=swap');
+    @font-face {
+    font-family: 'titre';
+    src: url('../static/font/Silkscreen-Regular.ttf') format('truetype');
+    /* Ajoutez une version WOFF pour une compatibilité étendue */
+    /* src: url('../static/font/game_over.woff') format('woff'), */
+    }
 
-<body class="">
-    {% include 'navbar.html' %}
-    <div class="flex justify-center bg-teal-900">
-
-        <div class="grid grid-cols-1 gap-32  mt-5 ">
-            <div>
-                <img class="object-cover h-96  rounded w-64 hover:scale-110 mb-3" src="../static/media/miliboo.png" alt=""style="width: 40vw;">
-                <div class="grid grid-cols-3" style="width: 40vw;">
-                    <div class="place-self-start">
-                        <h3 class="text-gray-500">Date</h3>
-                        <span class="text-black font-bold">Oct. 2022 - Jan.2023</span>
-                    </div>
-                    <div class="place-self-center">
-                        <h3 class="text-gray-500">Rôles</h3>
-                        <span class="text-black font-bold">Octobre 2023</span>
-                    </div>
-                    <div class="place-self-end">
-                        <h3 class="text-gray-500">Techs</h3>
-                        <span class="text-black font-bold">Octobre 2023</span>
-                    </div>
-
-                </div>
-
-
-            </div>
-            <div class="mb-5">
-
-                <img class="object-cover h-96 rounded hover:scale-110 mb-3 " src="../static/media/land_reunion_home.png" alt="" style="width: 40vw;">
-                <div class="grid grid-cols-3" style="width: 40vw;">
-                    <div class="place-self-start">
-                        <h3 class="text-gray-500">Date</h3>
-                        <span class="text-black font-bold">Octobre 2023</span>
-                    </div>
-                    <div class="place-self-center">
-                        <h3 class="text-gray-500">Rôles</h3>
-                        <span class="text-black font-bold">Octobre 2023</span>
-                    </div>
-                    <div class="place-self-end">
-                        <h3 class="text-gray-500">Techs</h3>
-                        <span class="text-black font-bold">Octobre 2023</span>
-                    </div>
-
-                </div>
-                
-
-            </div>
-
+    h1,p,span,h3 {
+        font-family: 'Exo 2', sans-serif;
         
+    }
+
+    #style-1::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    #style-1::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+    #style-1::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: #555;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .close {
+        position: absolute;
+        top: 7vh;
+        right: 35px;
+        font-size: 30px;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    #wrapper {
+        text-align: center;
+        width: 500px;
+        margin: auto;
+    }
+</style>
+
+<body class="bg-neutral-900">
+    <div class="scrollbar" id="style-1">
+        <div class="force-overflow"></div>
+    </div>
+    {% include 'navbar.html' %}
+    <div id="particles-js" style="height: 200vh" class="">
+
+        <div class="flex justify-center absolute" style="left: 2%;">
+
+            <div class="grid grid-cols-5 gap-32  mt-5 " style="width: 94vw;">
+                <div id="proj1" class="col-start-4 col-span-3">
+                    <img class="object-cover h-96  rounded w-64  mb-3" src="../static/media/miliboo.png"
+                        alt="" style="width: 40vw;" onclick="openModal('proj1')">
+                        <div><h3 class="text-white text-xl pt-1 pb-1">Miliboo</h3></div>
+
+                        <div class="grid grid-cols-3" style="width: 37vw;">
+                            <div class="place-self-start">
+                                <h3 class="text-gray-500">Date</h3>
+                                <span class="text-teal-900 font-bold">Oct. 2022 - Jan.2023</span>
+                            </div>
+                            <div class="place-self-center">
+                                <a href="https://github.com/lorrisc/Miliboo"
+                                    class="btn bg-black text-gray-300	 hover:text-white w-fit  ">Github <i
+                                        class="bi bi-github"></i></a>
+                            </div>
+                            <div class="place-self-end">
+                                <h3 class="text-gray-500">Techs</h3>
+                                <span class="text-teal-900   font-bold">Octobre 2023</span>
+                            </div>
+
+                        </div>
+
+
+                </div>
+                <div id="proj2" class="col-start-1  col-span-5 mb-5">
+
+                    <img class="object-cover h-96 rounded  mb-3 "
+                        src="../static/media/land_reunion_pictures.png" alt="" style="width: 40vw;"
+                        onclick="openModal('proj2')">
+                        <div><h3 class="text-white text-xl pt-1 pb-1">Land cover on Reunion</h3></div>
+
+                        <div class="grid grid-cols-3" style="width: 37vw;">
+                            <div class="place-self-start">
+                                <h3 class="text-gray-500">Date</h3>
+                                <span class="text-teal-900 font-bold">Oct. 2022 - Jan.2023</span>
+                            </div>
+                            <div class="place-self-center">
+                                <a href="https://github.com/lorrisc/Miliboo"
+                                    class="btn bg-black text-gray-300	 hover:text-white w-fit  ">Github <i
+                                        class="bi bi-github"></i></a>
+                            </div>
+                            <div class="place-self-end">
+                                <h3 class="text-gray-500">Techs</h3>
+                                <span class="text-teal-900   font-bold">Octobre 2023</span>
+                            </div>
+
+                        </div>
+
+
+                </div>
+
+                <div id="proj1" class="col-start-4 col-span-3 mb-5">
+
+
+                        <div class="mr-2">
+                            <img class="object-cover h-96  rounded w-64  mb-3"
+                                src="../static/media/miliboo.png" alt="" style="width: 40vw;"
+                                onclick="openModal('proj1')">
+                            <div><h3 class="text-white text-xl pt-1 pb-1">Miliboo</h3></div>
+                            <div class="grid grid-cols-3" style="width: 37vw;">
+                                <div class="place-self-start">
+                                    <h3 class="text-gray-500">Date</h3>
+                                    <span class="text-teal-900 font-bold">Oct. 2022 - Jan.2023</span>
+                                </div>
+                                <div class="place-self-center">
+                                    <a href="https://github.com/lorrisc/Miliboo"
+                                        class="btn bg-black text-gray-300	 hover:text-white w-fit  ">Github <i
+                                            class="bi bi-github"></i></a>
+                                </div>
+                                <div class="place-self-end">
+                                    <h3 class="text-gray-500">Techs</h3>
+                                    <span class="text-teal-900   font-bold">Octobre 2023</span>
+                                </div>
+
+                            </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="myModal" class="modal z-50">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal_content">
+
+            </div>
+
 
         </div>
     </div>
 
+    <script src="{{ url_for('static', filename='JS/particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/app.js') }}"></script>
 
-
-
-
-
+    <script>
+        $(document).ready(function () {
+            if (!$.browser.webkit) {
+                $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+            }
+        });
+    </script>
 
 
 
 
 </body>
+<script>
+    function openModal(id) {
+        const modal = document.getElementById('myModal');
+        const modal_content = document.getElementById('modal_content');
+
+        const modalcontent = document.getElementById(id);
+
+        modal.style.display = 'flex';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        var copiedElement = modalcontent.cloneNode(true);
+        modal_content.append(copiedElement)
+
+
+
+
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('myModal');
+        const modal_content = document.getElementById('modal_content');
+
+        modal.style.display = 'none';
+        modal_content.innerHTML = "";
+    }
+</script>
 
 </html>
