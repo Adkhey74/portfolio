@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Roboto&family=Roboto+Condensed:wght@300&display=swap');
+
+#style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.close {
+    position: absolute;
+    top: 7vh;
+    right: 35px;
+    font-size: 30px;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+#wrapper {
+    text-align: center;
+    width: 500px;
+    margin: auto;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s, transform 1.5s;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Couleur du curseur de défilement */
+    border-radius: 6px;
+    /* Rayon des coins du curseur de défilement */
+}
+
+/* Style de la barre de défilement sur Firefox */
+/* Notez que certaines versions de Firefox ne prennent pas en charge ces propriétés */
+* {
+    scrollbar-color: #888 transparent;
+    /* Couleur du curseur et de la piste de défilement */
+    scrollbar-width: thin;
+    /* Épaisseur de la barre de défilement sur Firefox */
+}
+
+
+
+
+
+@font-face {
+    font-family: 'titre';
+    src: url('../static/font/DancingScript-VariableFont_wght.ttf');
+    /* Ajoutez une version WOFF pour une compatibilité étendue */
+    /* src: url('../static/font/game_over.woff') format('woff'), */
+}
+
+* {
+    font-family: 'titre', sans-serif
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s, transform 1.5s;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
