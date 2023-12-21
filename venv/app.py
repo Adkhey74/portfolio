@@ -17,6 +17,10 @@ def projet():
 def cv():
     return render_template('cv.html', active_page='CV')
 
+@app.route('/contact.html')
+def contact():
+    return render_template('contact.html', active_page='Contact')
+
 
 @app.route('/download_pdf')
 def download_pdf():
