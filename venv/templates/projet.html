@@ -15,12 +15,6 @@
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Roboto&family=Roboto+Condensed:wght@300&display=swap');
-
-
-
-
-
-    
 </style>
 
 <body class="bg-neutral-900 ">
@@ -44,8 +38,24 @@
                     </div>
                     <div class="carousel-inner border-hidden rounded">
                         <div class="carousel-item active">
-                            <img id="proj1" src="../static/media/miliboo.png" class="d-block w-100 object-cover"
-                                style="height: 50vh;" alt="..." onclick="openModal('proj1')">
+                            <div id="proj1" onclick="openModal('proj1')">
+                                <img src="../static/media/miliboo.png" class="d-block w-100 object-cover"
+                                    style="height: 50vh;" alt="...">
+                                    <h3 class="text-gray-700 mt-2 text-xl desc hidden">Description : </h3>
+
+                                    <p class="hidden text-white desc mt-2 text-base">
+
+                                        Miliboo est une entreprise de vente de meubles en ligne. Le but de notre projet
+                                        universitaire était de développer le site web ainsi que tous les autres aspects
+                                        nécessaires pour une vente en ligne sécurisée (base de données, rendu droit,
+                                        cryptographie, etc.).
+
+                                        Nb : Miliboo est une entreprise qui existe réelement, mais nous n'étions pas en
+                                        relation avec eux, c'est un projet fictif.</p>
+
+
+                            </div>
+
                         </div>
                         <div class="carousel-item">
                             <img id="proj1" src="../static/media/miliboo.png" class="d-block w-100 object-cover"
@@ -107,29 +117,58 @@
                     </div>
                     <div class="carousel-inner border-hidden rounded">
                         <div class="carousel-item active">
-                            <img id="proj2__1" src="../static/media/land_reunion_home.png"
-                                class="d-block w-100 object-cover rounded    " style="height: 50vh;" alt="..."
-                                onclick="openModal('proj2__1')">
+                            <div id="proj2__1" onclick="openModal('proj2__1')">
+                                <img src="../static/media/land_reunion_home.png"
+                                    class="d-block w-100 object-cover rounded    " style="height: 50vh;" alt="...">
+                                <h3 class="text-gray-700 mt-2 text-xl">Description : </h3>
+                                <p class="hidden text-white desc mt-2 text-base">
+
+                                    Land Cover on Reunion est une application innovante conçue pour cartographier l'île
+                                    de la Réunion en identifiant de manière détaillée et précise tous ses terrains.
+                                    Chaque type de terrain est distingué par une couleur spécifique, permettant une
+                                    visualisation claire et intuitive de la diversité géographique de l'île.
+
+                                    Ce projet tire parti de modèles de réseaux de neurones convolutifs (CNN), développés
+                                    avec TensorFlow, une plateforme d'apprentissage automatique de pointe. Ces modèles
+                                    CNN sont spécialement conçus pour analyser et interpréter des images complexes,
+                                    rendant notre application particulièrement efficace dans la reconnaissance et la
+                                    classification des différents types de couvertures terrestres.
+
+                                    Destinée à un large éventail d'utilisateurs, de passionnés de géographie aux
+                                    professionnels du domaine, Land Cover on Reunion se veut accessible et utile pour
+                                    tous. Que ce soit pour des projets éducatifs, de recherche, ou simplement pour
+                                    satisfaire la curiosité, notre application offre une perspective unique sur
+                                    l'environnement naturel de l'île.
+
+                                    L'un des principaux avantages de Land Cover on Reunion est sa capacité à fournir des
+                                    informations détaillées et précises sur le paysage de l'île, ce qui peut être
+                                    bénéfique pour une variété d'applications, allant de la planification urbaine à la
+                                    conservation de la nature. Cette approche innovante non seulement facilite la
+                                    compréhension de la géographie complexe de la Réunion, mais ouvre également la voie
+                                    à de nouvelles méthodes d'exploration et de préservation de l'environnement.</p>
+
+                            </div>
+
                         </div>
 
                         <div class="carousel-item">
                             <img id="proj2__2" src="../static/media/model2.png"
                                 class="d-block w-100 object-cover rounded" style="height: 50vh;" alt="..."
-                                onclick="openModal('proj2__2')">
+                                onclick="openModal('proj2__1')">
                         </div>
                         <div class="carousel-item">
                             <img id="proj1" src="../static/media/dataset.png" class="d-block w-100 object-cover rounded"
-                                style="height: 50vh;" alt="..." onclick="openModal('proj2__3')">
+                                style="height: 50vh;" alt="..." onclick="openModal('proj2__1')">
                         </div>
                         <div class="carousel-item">
                             <img id="proj2__4" src="../static/media/model.png"
                                 class="d-block w-100 object-cover rounded" style="height: 50vh;" alt="..."
-                                onclick="openModal('proj2__4')">
+                                onclick="openModal('proj2__1')">
                         </div>
                         <div class="carousel-item">
                             <img id="proj2__5" src="../static/media/land_reunion_pictures.png"
                                 class="d-block w-100 object-cover rounded" style="height: 50vh;" alt="..."
-                                onclick="openModal('proj2__5')">
+                                onclick="openModal('proj2__1')">
                         </div>
 
 
@@ -188,6 +227,12 @@
         <h1>Dev by Adil Khadich</h1>
 
     </div>
+    <div class="text-white" id="translatable">
+        Bonjour
+
+    </div>
+    <input id="button" type="button" value="Translate" />
+
     <div id="myModal" class="modal z-50">
         <span class="close absolute top-2" onclick="closeModal()">&times;</span>
         <div id="modal_content" class="" style="height: 85vh; width: 50vw;">
@@ -200,7 +245,31 @@
 
     <script src="{{ url_for('static', filename='JS/particles.js') }}"></script>
     <script src="{{ url_for('static', filename='JS/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@vitalets/google-translate-api"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('#langSelect').change(function () { translate(); });
+
+            function translate() {
+
+                var sourceText = $('#translatable').text();
+                var sourceLang = 'en';
+                var targetLang = 'fr';
+                console.log(sourceText);
+
+                var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
+                //console.log(url);
+
+                $.getJSON(url, function (data) {
+                    $('#translatable').val(data[0][0][0]);
+                });
+
+            }
+        });
+    </script>
+
+      
     <script>
         $(document).ready(function () {
             const images = document.querySelectorAll('.fade-in');
@@ -248,8 +317,15 @@
         modal_content.style.justifyContent = 'center';
         modal_content.style.alignItems = 'center';
 
+        modal_content.style.marginTop = '7vh';
+
+
+
+
         var copiedElement = modalcontent.cloneNode(true);
         modal_content.append(copiedElement)
+        $('#modal_content').find('.desc').removeClass('hidden');
+        
         document.body.style.overflow = 'hidden';
 
 
