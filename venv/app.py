@@ -17,6 +17,14 @@ def projet():
 def cv():
     return render_template('cv.html', active_page='CV')
 
+
+@app.route('/About.html')
+def about():
+    return render_template('About.html', active_page='About')
+@app.route('/competences.html')
+def competence():
+    return render_template('competences.html', active_page='Competences')
+
 @app.route('/contact.html')
 def contact():
     return render_template('contact.html', active_page='Contact')
