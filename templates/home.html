@@ -17,14 +17,15 @@
 
 <body class="bg-neutral-900">
   {% include 'navbar.html' %}
-  <div id="particles-js" style="height: 93vh">
+  <div id="particles-js" style="height: 93vh ; ">
 
     <div class="flex justify-center absolute fade-in " style="height: 93vh;left: 24%;">
 
       <div class="flex justify-end items-center" style="width: 50vw; height: 80vh;">
         <div class="Bienvenue text-6xl flex items-end text-white " style="height: 20vh; width: 30vw;"
           >
-          <p style="font-family: 'titre', sans-serif !important">Bienvenue, <br>je suis <span class="text-neutral-500" style="font-family: 'titre', sans-serif !important">Adil </span><br>developpeur web
+          <p style="font-family: 'titre', sans-serif !important">Bienvenue, <br>je suis <span class="text-neutral-500" style="font-family: 'titre', sans-serif !important">Adil 
+          </span><br>développeur web
           </p>
         </div>
         <h1 class="object-cover  rounded-full hover:scale-110 text-8xl text-black Bienvenue bg-white flex justify-center items-center " 
@@ -38,7 +39,7 @@
   </div>
   <a href="{{ url_for('download_pdf') }}"
     class="Bienvenue fade-in fixed mb-3  let-0 ml-2 w-12 hover:w-20 bottom-12 btn rounded-xl text-xl  bg-neutral-700 text-white hover:bg-neutral-800 btn   h-10 ml-2 mt-1"
-    download style=" overflow: hidden;">
+    download style=" overflow: hidden;" target="_blank">
     <i class="bi bi-file-earmark-text"></i> <span style="font-family: 'titre', sans-serif !important">CV</span>
   </a>
   <a href="https://github.com/Adkhey74" target="_blank"
