@@ -8,7 +8,12 @@
     border-radius: 10px;
     background-color: #F5F5F5;
 }
-
+/* .carousel-indicators  {
+    background-color: rgba(0, 0, 0, 0.4);
+}    */
+.carousel-indicators .active {
+    background-color: black; /* Couleur de fond de l'indicateur actif */
+}
 #style-1::-webkit-scrollbar {
     width: 12px;
     background-color: #F5F5F5;
@@ -20,6 +25,7 @@
     background-color: #555;
 }
 
+/* Style initial de la modal (invisible et rotation) */
 .modal {
     display: none;
     position: fixed;
@@ -30,7 +36,33 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transform: perspective(400px) rotateX(-90deg);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
+/* Style final de la modal (visible et sans rotation) */
+.modal.active {
+    display: block;
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+    animation: flipDown 0.3s ease-in-out;
+
+}
+
+
+@keyframes flipDown {
+    from {
+        transform: perspective(400px) rotateX(-90deg);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+
 
 .close {
     position: absolute;
@@ -59,7 +91,10 @@
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    background-color: #555;
+    border-radius: 6px;
+
+    width: 3px;
     /* Largeur de la barre de défilement */
 }
 
@@ -69,7 +104,13 @@
     border-radius: 6px;
     /* Rayon des coins du curseur de défilement */
 }
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
 
+::-webkit-scrollbar:horizontal {
+    display: none;
+}
 /* Style de la barre de défilement sur Firefox */
 /* Notez que certaines versions de Firefox ne prennent pas en charge ces propriétés */
 * {
@@ -78,6 +119,30 @@
     scrollbar-width: thin;
     /* Épaisseur de la barre de défilement sur Firefox */
 }
+
+/* #advancementInPage
+{
+    width: 3px;
+    height: 50%;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+    border-radius: 100px;
+    background-color: #232423;
+}
+
+element.style {
+    height: 56.9343%;
+}
+#scrollIndicator {
+    background-color: #4e4e4e;
+    width: 100%;
+    height: 10%;
+    z-index: 20;
+    position: absolute;
+    border-radius: 100px;
+} */
 
 
 
