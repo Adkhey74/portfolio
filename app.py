@@ -28,6 +28,9 @@ def competence():
 @app.route('/contact.html')
 def contact():
     return render_template('contact.html', active_page='Contact')
+@app.route('/parcours.html')
+def parcours():
+    return render_template('parcours.html', active_page='Parcours')
 
 
 @app.route('/download_pdf')
