@@ -12,11 +12,11 @@
 
 </head>
 
-<body class="bg-neutral-900"  >
+{% include 'body.html' %}
     {% include 'navbar.html' %}
-    <div id="particles-js" style="height: 93vh">
-
-      <div class=" absolute fade-in " style="height: fit-content; top: 25%;">
+    <div id="particles-js" style="height: 185vh;width: 100vw;z-index: -50; position: fixed; top: 0;">
+    </div>
+      <div class=" flex justify-center items-center fade-in " style="height: 100vh; top: 25%;">
 
         <div class="flex justify-center items-center space-x-24 " style="width: 100vw; height: fit-content;">
             <div class="grid grid-rows-2 grid-flow-col gap-x-32">
