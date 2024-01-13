@@ -70,26 +70,27 @@
 
   <div class="flex justify-center lg:flex lg:gap-x-12 " style="width: 100vw;">
     <a href="{{url_for('home')}}"
-      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Home' %}underline2 underline2-offset-8{% endif %}"
+      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Home' %}underline   underline-offset-8{% endif %}"
       style="font-family: 'titre', sans-serif !important"><i class="bi bi-house-fill"></i> Acceuil</a>
+      
     <a href="{{url_for('projet')}}"
-      class="text-base font-bold leading-6 text-black Bienvenue{% if active_page == 'Projet' %}underline2 underline2 underline2-offset-8{% endif %}"
-      style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-workspace"></i> Projets</a>
+    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Projet' %}underline   underline-offset-8{% endif %}"
+          style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-workspace"></i> Projets</a>
     <a href="{{url_for('competence')}}"
-      class="text-base font-bold leading-6 text-black Bienvenue{% if active_page == 'Competences' %}underline2 underline2 underline2-offset-8{% endif %}"
+    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Competences' %}underline   underline-offset-8{% endif %}"
       style="font-family: 'titre', sans-serif !important"><i class="fa-solid fa-briefcase"></i> Compétences</a>
     <a href="{{url_for('parcours')}}"
-      class="text-base font-bold leading-6 text-black Bienvenue{% if active_page == 'Parcours' %}underline2 underline2 underline2-offset-8{% endif %}"
+    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Parcours' %}underline   underline-offset-8{% endif %}"
       style="font-family: 'titre', sans-serif !important"><i class="fa-solid fa-graduation-cap"></i> Parcours</a>
     <a href="{{url_for('about')}}"
-      class="text-base font-bold leading-6 text-black Bienvenue{% if active_page == 'About' %}underline2 underline2 underline2-offset-8{% endif %}"
+    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'About' %}underline   underline-offset-8{% endif %}"
       style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-square"></i> À propos</a>
     <!-- <a href="{{url_for('cv')}}"
       class="text-base  font-bold leading-6 text-black {% if active_page == 'CV' %}underline2 underline2 underline2-offset-8{% endif %}"><i
         class="bi bi-file-person-fill"></i> CV</a> -->
 
     <a href="{{url_for('contact')}}"
-      class="text-base font-bold leading-6 text-black Bienvenue{% if active_page == 'Contact' %}underline2 underline2 underline2-offset-8{% endif %}"
+    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Contact' %}underline   underline-offset-8{% endif %}"
       style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-lines-fill"></i> Contact</a>
   </div>
 
