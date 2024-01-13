@@ -31,7 +31,9 @@ def contact():
 @app.route('/parcours.html')
 def parcours():
     return render_template('parcours.html', active_page='Parcours')
-
+@app.route('/test.html')
+def test():
+    return render_template('test.html', active_page='Test')
 
 @app.route('/download_pdf')
 def download_pdf():

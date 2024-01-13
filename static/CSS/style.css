@@ -81,7 +81,7 @@ body{margin: 0; padding: 0;}
 
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
+    transform: (20px);
     transition: opacity 1.5s, transform 1.5s;
 }
 

@@ -12,7 +12,47 @@
 
 </head>
 <style>
- 
+
+
+
+
+.ml11 .letter {
+  font-family: 'titre', sans-serif !important
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 20vh;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 100%;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+
+}
+
+.ml11 .line {
+  opacity: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 50%;
+}
+
+.let {
+    color: initial; /* Réinitialiser la couleur à sa valeur par défaut */
+  }
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
 </style>
 
 {% include 'body.html' %}
@@ -23,11 +63,20 @@
     <div class="flex justify-center absolute fade-in " style="height: 93vh;left: 24%;">
 
       <div class="flex justify-end items-center" style="width: 50vw; height: 80vh;">
-        <div class="Bienvenue text-6xl flex items-end text-white " style="height: 20vh; width: 30vw;"
-          >
-          <p style="font-family: 'titre', sans-serif !important">Bienvenue, <br>je suis <span class="text-rose-500" style="font-family: 'titre', sans-serif !important">Adil 
-          </span><br>développeur web
-          </p>
+        <div class="Bienvenue text-6xl flex items-center text-white mr-14" style="height: 20vh; width: 27vw;">
+          <h1 class="ml11" style="width: 28vw;">
+            <span class="text-wrapper">
+                <span class="line line1"></span>
+                <h1 class="letters">
+                    Bienvenue, je suis <span class="let"><span class="text-rose-500">A</span>dil</span>
+                    <br>développeur web
+                </h1>
+            </span>
+        </h1>
+        
+          
+          
+
         </div>
         <h1 class="object-cover  rounded-full hover:scale-110 text-8xl text-black Bienvenue bg-white backdrop-blur-sm flex justify-center items-center " 
           style="font-family: 'titre', sans-serif !important;height: 35vh; width: 17vw;">AK</h1>
@@ -39,12 +88,12 @@
     </div>
   </div>
   <a href="{{ url_for('download_pdf') }}"
-  class="Bienvenue fade-in fixed mb-3  let-0 ml-2 w-12 hover:w-20 bottom-12 btn rounded-xl text-xl   bg-gray-950 text-white hover:bg-gray-900 btn   h-10 ml-2 mt-1"
-  download style=" overflow: hidden;" target="_blank">
+  class="Bienvenue fade-in fixed mb-3 test   ml-2 w-12 hover:w-20 bottom-12 btn rounded-xl text-xl   bg-gray-950 text-white hover:bg-gray-900 btn   h-10 ml-2 mt-1"
+  download style="left:-250px; overflow: hidden;" target="_blank">
   <i class="bi bi-file-earmark-text"></i> <span style="font-family: 'titre', sans-serif !important">CV</span>
 </a>
 <a href="https://github.com/Adkhey74" target="_blank"
-  class="fade-in fixed mb-3 let-0 ml-2 bottom-0 btn rounded-xl  bg-gray-950 text-xl text-white hover:bg-gray-900"><i
+  class="fade-in fixed mb-3 let-0 ml-2  test bottom-0 btn rounded-xl  bg-gray-950 text-xl text-white hover:bg-gray-900" style="left:-250px;"><i
       class="bi bi-github"></i></a>
   <div id=""
     class="fade-in Bienvenue fixed mb-3 right-0 ml-2 bottom-0 btn rounded-xl text-xl  blur-sm text-white  btn  h-10 ml-2 mt-1  hover:blur-none ">
@@ -54,6 +103,7 @@
 
   <script src="{{ url_for('static', filename='JS/particles.js') }}"></script>
   <script src="{{ url_for('static', filename='JS/app.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 
 
@@ -63,7 +113,58 @@
 </body>
 
 <script>
+  anime({
+  targets: '.test',
+  translateX: 250,
+  duration: 1
+
+});
+window.onload = function() {
+  var textWrapper = document.querySelector('.ml11 .letters');
+
+  textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({ loop: false })
+    .add({
+      targets: '.ml11 .line',
+      scaleY: [0, 1],
+      opacity: [0.5, 1],
+      easing: "easeOutExpo",
+      duration: 700
+    })
+    .add({
+      targets: '.ml11 .line',
+      translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+      easing: "easeOutExpo",
+      duration: 700,
+      delay: 100
+    })
+    .add({
+      targets: '.ml11 .letter',
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 600,
+      offset: '-=775',
+      delay: (el, i) => 34 * (i + 1),
+      complete: function () {
+        var letterRose = document.querySelectorAll('.ml11 .text-rose-500 .letter2');
+        letterRose.forEach(function(letter) {
+          letter.style.color = 'pink';
+        });
+      }
+    })
+    .add({
+      targets: '.ml11',
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 1000
+    });
+};
+
+
+
   $(document).ready(function () {
+    
     const images = document.querySelectorAll('.fade-in');
 
     const observer = new IntersectionObserver(entries => {
