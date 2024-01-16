@@ -58,9 +58,14 @@
 {% include 'body.html' %}
 
   {% include 'navbar.html' %}
-  <div id="particles-js" style="height: 93vh ; ">
+  <div id="particles-js" style="height: 185vh;width: 100vw;z-index: -50; position: fixed; top: 0;">
 
-    <div class="flex justify-center absolute fade-in " style="height: 93vh;left: 24%;">
+
+  </div>
+  <!-- <div class="bg-black/20 backdrop-blur-sm" style="height: 185vh;width: 100vw;z-index: -50; position: fixed; top: 0;">
+
+  </div> -->
+    <div class="flex justify-center  fade-in " style="height: 93vh;">
 
       <div class="flex justify-end items-center" style="width: 50vw; height: 80vh;">
         <div class="Bienvenue text-6xl flex items-center text-white mr-14" style="height: 20vh; width: 27vw;">
@@ -86,7 +91,6 @@
 
 
     </div>
-  </div>
   <a href="{{ url_for('download_pdf') }}"
   class="Bienvenue fade-in fixed mb-3 test   ml-2 w-12 hover:w-20 bottom-12 btn rounded-xl text-xl   bg-gray-950 text-white hover:bg-gray-900 btn   h-10 ml-2 mt-1"
   download style="left:-250px; overflow: hidden;" target="_blank">

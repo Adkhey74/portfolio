@@ -55,46 +55,48 @@
     font-family: 'titre', sans-serif
   }
 </style>
-<nav class=" flex items-center bg-white pr-0 justify-between p-6 lg:px-8 sticky top-0 z-40" aria-label="Global"
-  style="height: 7vh;">
-  <div class="flex lg:flex-1">
-    <a href="{{url_for('home')}}"  class="fade-in -m-1.5 p-1.5 text-2xl rounded-full p-2  text-black  " id="singature">
-      <h1 class="ml112">
-        <span class="text-wrapper">
-          <span class="line2 line21"></span>
-          <span class="letters2 " >AK</span>
-        </span>
-      </h1>
-    </a>
+<nav class=" absolute  test" aria-label="Global" style="top: -100vh;">
+  <div class="flex items-center bg-white pr-0 justify-between p-6 lg:px-8 sticky  z-40" style="height: 7vh; ">
+
+    <div class="flex lg:flex-1">
+      <a href="{{url_for('home')}}"  class="fade-in -m-1.5 p-1.5 text-2xl rounded-full p-2  text-black  " id="singature">
+        <h1 class="ml112">
+          <span class="text-wrapper">
+            <span class="line2 line21"></span>
+            <span class="letters2 " >AK</span>
+          </span>
+        </h1>
+      </a>
+    </div>
+
+    <div class="flex justify-center lg:flex lg:gap-x-12 " style="width: 100vw;">
+      <a href="{{url_for('home')}}"
+        class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Home' %}underline   underline-offset-8{% endif %}"
+        style="font-family: 'titre', sans-serif !important"><i class="bi bi-house-fill"></i> Acceuil</a>
+        
+      <a href="{{url_for('projet')}}"
+      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Projet' %}underline   underline-offset-8{% endif %}"
+            style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-workspace"></i> Projets</a>
+      <a href="{{url_for('competence')}}"
+      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Competences' %}underline   underline-offset-8{% endif %}"
+        style="font-family: 'titre', sans-serif !important"><i class="fa-solid fa-briefcase"></i> Compétences</a>
+      <a href="{{url_for('parcours')}}"
+      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Parcours' %}underline   underline-offset-8{% endif %}"
+        style="font-family: 'titre', sans-serif !important"><i class="fa-solid fa-graduation-cap"></i> Parcours</a>
+      <a href="{{url_for('about')}}"
+      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'About' %}underline   underline-offset-8{% endif %}"
+        style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-square"></i> À propos</a>
+      <!-- <a href="{{url_for('cv')}}"
+        class="text-base  font-bold leading-6 text-black {% if active_page == 'CV' %}underline2 underline2 underline2-offset-8{% endif %}"><i
+          class="bi bi-file-person-fill"></i> CV</a> -->
+
+      <a href="{{url_for('contact')}}"
+      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Contact' %}underline   underline-offset-8{% endif %}"
+        style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-lines-fill"></i> Contact</a>
+
+
   </div>
-
-  <div class="flex justify-center lg:flex lg:gap-x-12 " style="width: 100vw;">
-    <a href="{{url_for('home')}}"
-      class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Home' %}underline   underline-offset-8{% endif %}"
-      style="font-family: 'titre', sans-serif !important"><i class="bi bi-house-fill"></i> Acceuil</a>
-      
-    <a href="{{url_for('projet')}}"
-    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Projet' %}underline   underline-offset-8{% endif %}"
-          style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-workspace"></i> Projets</a>
-    <a href="{{url_for('competence')}}"
-    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Competences' %}underline   underline-offset-8{% endif %}"
-      style="font-family: 'titre', sans-serif !important"><i class="fa-solid fa-briefcase"></i> Compétences</a>
-    <a href="{{url_for('parcours')}}"
-    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Parcours' %}underline   underline-offset-8{% endif %}"
-      style="font-family: 'titre', sans-serif !important"><i class="fa-solid fa-graduation-cap"></i> Parcours</a>
-    <a href="{{url_for('about')}}"
-    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'About' %}underline   underline-offset-8{% endif %}"
-      style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-square"></i> À propos</a>
-    <!-- <a href="{{url_for('cv')}}"
-      class="text-base  font-bold leading-6 text-black {% if active_page == 'CV' %}underline2 underline2 underline2-offset-8{% endif %}"><i
-        class="bi bi-file-person-fill"></i> CV</a> -->
-
-    <a href="{{url_for('contact')}}"
-    class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Contact' %}underline   underline-offset-8{% endif %}"
-      style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-lines-fill"></i> Contact</a>
-  </div>
-
-  <div>
+  <div class=" absolute right-28" >
 
     <select class="form-select w-28 bg-white/30 backdrop-blur-sm border-hidden " name="" id="langSelect" style="font-family: 'titre', sans-serif !important">
       <option value="fr">French</option>
@@ -113,6 +115,7 @@
     </select>
 
   </div>
+
 </nav>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
@@ -120,7 +123,7 @@
     var textWrapper = document.querySelector('.ml112 .letters2');
   textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter2'>$&</span>");
 
-  anime.timeline2({ loop: false })
+  anime.timeline({ loop: false })
     .add({
       targets: '.ml112 .line2',
       scaleY: [0, 1],
@@ -151,6 +154,17 @@
       duration: 1000,
       easing: "easeOutExpo",
       delay: 1000
+    }
+    );
+    anime({
+      targets: '.test',
+      translateY: '100vh',
+      easing: 'easeOutExpo',
+
+      duration:2000
+
+
+
     });
   // Wrap every letter2 in a span
   // anime.timeline2({loop: false})
