@@ -55,14 +55,16 @@
     font-family: 'titre', sans-serif
   }
 </style>
-<nav class=" absolute  test" aria-label="Global" style="top: -100vh;">
-  <div class="flex items-center bg-white pr-0 justify-between p-6 lg:px-8 sticky  z-40" style="height: 7vh; ">
+<div class="fixed test bg-white" style="height:7vh ; top:-100vh;width: 100vw;">
+</div>
 
+
+  <nav class=" flex items-center  fade-in  pr-0 justify-between p-6 lg:px-8 sticky  " aria-label="Global"
+    style="height: 7vh;">
     <div class="flex lg:flex-1">
       <a href="{{url_for('home')}}"  class="fade-in -m-1.5 p-1.5 text-2xl rounded-full p-2  text-black  " id="singature">
         <h1 class="ml112">
           <span class="text-wrapper">
-            <span class="line2 line21"></span>
             <span class="letters2 " >AK</span>
           </span>
         </h1>
@@ -72,7 +74,7 @@
     <div class="flex justify-center lg:flex lg:gap-x-12 " style="width: 100vw;">
       <a href="{{url_for('home')}}"
         class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Home' %}underline   underline-offset-8{% endif %}"
-        style="font-family: 'titre', sans-serif !important"><i class="bi bi-house-fill"></i> Acceuil</a>
+        style="font-family: 'titre', sans-serif !important; z-index: 50 !important;"><i class="bi bi-house-fill"></i> Acceuil</a>
         
       <a href="{{url_for('projet')}}"
       class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Projet' %}underline   underline-offset-8{% endif %}"
@@ -93,30 +95,30 @@
       <a href="{{url_for('contact')}}"
       class="text-base  font-bold leading-6 text-black Bienvenue {% if active_page == 'Contact' %}underline   underline-offset-8{% endif %}"
         style="font-family: 'titre', sans-serif !important"><i class="bi bi-person-lines-fill"></i> Contact</a>
+    </div>
+
+    <div>
+
+      <select class="form-select w-28 bg-white/30 backdrop-blur-sm border-hidden " name="" id="langSelect" style="font-family: 'titre', sans-serif !important">
+        <option value="fr">French</option>
+        <option value="en">English</option>
+        <!-- Ajoutez autant d'options que nécessaire -->
+
+        <!-- Utilisez des divs pour personnaliser chaque option -->
+        <div class="custom-option" data-value="fr">
+          <img style="height: 5vh; width: 5vw;" src="../static/media/france_flag.png" alt="">
+          French
+        </div>
+        <div class="custom-option" data-value="en">
+          <img style="height: 5vh; width: 5vw;" src="../static/media/uk_flag.png" alt="">
+          English
+        </div>
+      </select>
+
+    </div>
+  </nav>
 
 
-  </div>
-  <div class=" absolute right-28" >
-
-    <select class="form-select w-28 bg-white/30 backdrop-blur-sm border-hidden " name="" id="langSelect" style="font-family: 'titre', sans-serif !important">
-      <option value="fr">French</option>
-      <option value="en">English</option>
-      <!-- Ajoutez autant d'options que nécessaire -->
-
-      <!-- Utilisez des divs pour personnaliser chaque option -->
-      <div class="custom-option" data-value="fr">
-        <img style="height: 5vh; width: 5vw;" src="../static/media/france_flag.png" alt="">
-        French
-      </div>
-      <div class="custom-option" data-value="en">
-        <img style="height: 5vh; width: 5vw;" src="../static/media/uk_flag.png" alt="">
-        English
-      </div>
-    </select>
-
-  </div>
-
-</nav>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 <script>
@@ -145,23 +147,22 @@
       duration: 600,
       offset: '-=775',
       delay: (el, i) => 34 * (i + 1),
-      complete: function () {
-        document.querySelector('.ml112 .letters2 .let').style.color = 'pink';
-      }
+
     })
     .add({
       targets: '.ml112',
       duration: 1000,
       easing: "easeOutExpo",
       delay: 1000
-    }
-    );
+    });
+
+
     anime({
       targets: '.test',
       translateY: '100vh',
       easing: 'easeOutExpo',
 
-      duration:2000
+      duration:1500
 
 
 

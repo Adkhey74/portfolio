@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     # Votre logique de traitement peut être ajoutée ici
     # Par exemple, rendre un modèle avec render_template
-    return render_template('home.html',active_page='Home')
+    return render_template('index.html',active_page='Home')
 
 
 @app.route('/projet.html')
