@@ -123,7 +123,28 @@
   duration: 1
 
 });
+$('#navbar').addClass('opacity-0');
+
+anime({
+  targets: '#navbar',
+  easing: "easeOutExpo",
+
+  complete: function (anim) {
+
+    $('#navbar').addClass('opacity-1').animate({ opacity: 1 }, 600);
+
+    // Supprimer la classe 'opacity-0'
+    $('#navbar').removeClass('opacity-0');
+
+    // Supprimer la classe 'hidden' après l'animation
+  },
+  duration: 700
+
+
+
+});
 window.onload = function() {
+
   var textWrapper = document.querySelector('.ml11 .letters');
 
   textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w|,)/g, "<span class='letter'>$&</span>");

@@ -24,7 +24,8 @@
         <div class="force-overflow"></div>
     </div>
     {% include 'navbar.html' %}
-    <div id="particles-js" style="height: 90vh;">
+
+    <div id="particles-js" style="height: 90vh;" >
 
 
         <div class="grid absolute grid-cols-5 gap-32  mt-5 " style="width: 95vw; height: 80vh; overflow: scroll;">
@@ -95,15 +96,15 @@
 
                 <div class="grid grid-cols-3" style="width: 47vw;">
                     <div class="place-self-start">
-                        <h3 class="text-gray-500 fade-in">Date</h3>
+                        <h3 class="text-red-500 fade-in">Date</h3>
                         <span class="text-zinc-200 font-bold fade-in">Nov. 2023 - Dec.2023</span>
                     </div>
                     <div class="place-self-end">
-                        <h3 class="text-gray-500 fade-in">Techs</h3>
+                        <h3 class="text-red-500 fade-in">Techs</h3>
                         <span class="text-zinc-200 fade-in  font-bold">HTML, CSS, JavaScript, Flask</span>
                     </div>
                     <div class="place-self-end">
-                        <h3 class="text-gray-500 fade-in">Rôles</h3>
+                        <h3 class="text-red-500 fade-in">Rôles</h3>
                         <span class="text-zinc-200 fade-in  font-bold">Développement front-end</span>
                     </div>
 
@@ -131,7 +132,7 @@
                             <div id="proj1" onclick="openModal('proj1')">
                                 <img src="../static/media/miliboo.png"
                                     class="d-block w-100 rounded  hover:cursor-pointer" style="height: 50vh;" alt="...">
-                                <h3 class="text-gray-700 mt-2 text-xl desc hidden">Description : </h3>
+                                <h3 class="text-red-500 mt-2 text-xl desc hidden">Description : </h3>
 
                                 <p class="hidden text-white desc mt-2 text-base">
 
@@ -201,15 +202,15 @@
 
                 <div class="grid grid-cols-3" style="width: 47vw;">
                     <div class="place-self-start">
-                        <h3 class="text-gray-500 fade-in">Date</h3>
+                        <h3 class="text-red-500 fade-in">Date</h3>
                         <span class="text-zinc-200 font-bold fade-in">Oct. 2022 - Jan.2023 </span>
                     </div>
                     <div class="place-self-center">
-                        <h3 class="text-gray-500 fade-in">Techs</h3>
+                        <h3 class="text-red-500 fade-in">Techs</h3>
                         <span class="text-zinc-200 fade-in  font-bold"> HTML, CSS, JavaScript, Laravel</span>
                     </div>
                     <div class="place-self-end">
-                        <h3 class="text-gray-500 fade-in">Rôles</h3>
+                        <h3 class="text-red-500 fade-in">Rôles</h3>
                         <span class="text-zinc-200 fade-in  font-bold">Développement back-end</span>
                     </div>
                 </div>
@@ -236,7 +237,7 @@
                                 <img src="../static/media/land_reunion_home.png"
                                     class="d-block w-100 object-cover rounded  hover:cursor-pointer  "
                                     style="height: 50vh;" alt="...">
-                                <h3 class="text-gray-700 hidden desc mt-2 text-xl">Description : </h3>
+                                <h3 class="text-red-500 hidden desc mt-2 text-xl">Description : </h3>
                                 <p class="hidden text-white desc mt-2 text-base">
 
                                     Land Cover on Reunion est une application innovante conçue pour cartographier l'île
@@ -323,15 +324,15 @@
 
                 <div class="grid grid-cols-3" style="width: 47vw;">
                     <div class="place-self-start">
-                        <h3 class="text-gray-500 fade-in">Date</h3>
+                        <h3 class="text-red-500 fade-in">Date</h3>
                         <span class="text-zinc-200 font-bold fade-in">Nov. 2023 - Dec.2023</span>
                     </div>
                     <div class="place-self-end">
-                        <h3 class="text-gray-500 fade-in">Techs</h3>
+                        <h3 class="text-red-500 fade-in">Techs</h3>
                         <span class="text-zinc-200 fade-in  font-bold">HTML, CSS, JavaScript, Flask</span>
                     </div>
                     <div class="place-self-end">
-                        <h3 class="text-gray-500 fade-in">Rôles</h3>
+                        <h3 class="text-red-500 fade-in">Rôles</h3>
                         <span class="text-zinc-200 fade-in  font-bold">Développement front et back</span>
                     </div>
 
@@ -364,7 +365,7 @@
     </div>
 
 
-    <div id="myModal" class="modal z-50">
+    <div id="myModal" class="modal z-50 bg-black/50 backdrop-blur-md">
         <span class="close absolute top-2" onclick="closeModal()">&times;</span>
         <div id="modal_content" class="" style="height: 85vh; width: 50vw;">
 
@@ -379,6 +380,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@vitalets/google-translate-api"></script>
 
     <script>
+ 
         $(document).ready(function () {
             $('#langSelect').change(function () { translate(); });
 

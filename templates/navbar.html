@@ -55,11 +55,11 @@
     font-family: 'titre', sans-serif
   }
 </style>
-<div class="fixed test bg-white" style="height:7vh ; top:-100vh;width: 100vw;">
-</div>
+<!-- <div  class="fixed test bg-white" style="height:7vh ; top:-100vh;width: 100vw;">
+</div> -->
 
 
-  <nav class=" flex items-center  fade-in  pr-0 justify-between p-6 lg:px-8 sticky  " aria-label="Global"
+  <nav id="navbar" class="bg-white flex items-center    pr-0 justify-between p-6 lg:px-8 sticky  " aria-label="Global"
     style="height: 7vh;">
     <div class="flex lg:flex-1">
       <a href="{{url_for('home')}}"  class="fade-in -m-1.5 p-1.5 text-2xl rounded-full p-2  text-black  " id="singature">
@@ -157,16 +157,7 @@
     });
 
 
-    anime({
-      targets: '.test',
-      translateY: '100vh',
-      easing: 'easeOutExpo',
-
-      duration:1500
-
-
-
-    });
+    
   // Wrap every letter2 in a span
   // anime.timeline2({loop: false})
   // .add({
